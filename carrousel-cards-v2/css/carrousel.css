@@ -1,0 +1,87 @@
+@import url(./root.css);
+
+.carrousel{
+    width: 90%;
+    max-width: 120em;
+    overflow: hidden;
+
+    position: relative;
+    padding: 10px 0 10px 10px;
+}
+
+.carrousel .grande {
+    width: 202%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    transform: translateX(0%); /*Importante!*/
+    transition: transform 1s;
+}
+
+.carrousel .img {
+    width: calc(100% / 3);
+    background-color: green;
+}
+
+.carrousel .puntos {
+    width: 100%;
+    padding: .2em;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    top: 30%;
+    left: -7px;
+}
+
+.carrousel .punto {
+    width: 3em;
+    height: 3em;
+    background-color: gray;
+    margin: 1em;
+
+    list-style-type: none;
+    position: relative;
+}
+
+
+
+
+.carrousel .punto.active {
+    background-color: orange;
+}
+
+.carrousel .punto:hover {
+    cursor: pointer;
+}
+
+
+
+
+.carrousel .punto::before {
+    content: "";
+    width: 60%;
+    height: 60%;
+    background-size: cover;
+    border-radius:100% ;
+
+    /*Centrar*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.punto:nth-child(1)::before {
+    background-image: url(../img/arrow_left_angle.svg);
+}
+
+.punto:nth-child(2)::before {
+    background-image: url(../img/arrow_rigth_angle.svg);
+}
