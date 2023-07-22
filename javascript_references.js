@@ -100,3 +100,48 @@ param => {
 }
 
 */
+
+
+// Operacdor Ternario
+
+// condition ? exprIfTrue : exprIfFalse
+
+function obtenerTarifa (esMiembro) {
+    return (esMiembro ? '$2.00' : '$10.00')
+}
+console.log(obtenerTarifa(true))      //$2.00
+console.log(obtenerTarifa(false))     //$10.00
+console.log(obtenerTarifa(null))      //$10.00
+
+
+// if...else if...else
+
+function example() {
+    return condition1 ? value1 //  if
+      : condition2 ? value2    //  else if
+      : condition3 ? value3    //  else if
+      : value4;                //  else
+}
+  
+function example() {
+  if (condition1) {
+    return value1;
+  } else if (condition2) {
+    return value2;
+  } else if (condition3) {
+    return value3;
+  } else {
+    return value4;
+  }
+}
+
+
+// addEventeListener
+
+// target.addEventListener(tipo, listener[, useCapture]);
+// target.addEventeListener(tipo, funcionAnonima )
+
+let i = 0
+document.body.addEventListener('click',function(){  console.log(i),i++ })
+document.body.addEventListener('click',() => { console.log(i++) } )
+

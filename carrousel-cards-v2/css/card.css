@@ -1,3 +1,10 @@
+:root {
+    --card-length : '';
+    --card-block: 4;
+    --range:'';
+
+}
+
 .card-container {
     display: flex;
     flex-flow: row nowrap;
@@ -13,11 +20,9 @@
     overflow: hidden;
 
     background-color: white;
-    margin-right: 1.3em;
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     cursor: pointer;
 }
 
@@ -25,6 +30,112 @@
    width: 100%; 
 }
 
-.container {
+.card-text {
     padding: 2px 16px;
 }
+
+
+
+/*FLIP CARD*/
+
+
+ 
+.card_id .card-inner {
+    overflow: hidden;
+}
+
+.card_id {
+    background-color: white!important;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)!important;
+}
+
+.card {
+    background-color: transparent;
+    perspective: 1000px;  
+    overflow: initial;
+    box-shadow: none;
+}
+
+
+.card-inner {
+    background-color: white;
+    position: relative;
+    width: 95%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin-inline: auto;
+
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-back,.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+
+.card-front {
+    overflow: hidden;
+}
+
+.card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back img {
+    width: 30%;
+    margin-top: 30%;
+}
+
+
+.card_id:hover.card-inner {
+    transform: unset!important;
+}
+
+
+/*Exp*/
+
+.grande {
+    width: calc(calc(100%/var(--card-block))*var(--card-length))!important ;
+
+}
+
+.card {
+    width: calc(100%/var(--card-block))!important;
+}
+
+
+
+@media (max-height: 1200px) {
+    .container {
+        max-width: 900px!important;
+    }
+  }
+
+@media (max-width: 500px) {
+
+    :root {
+        --card-block : 1
+    }
+
+    .container {
+        max-width: 500px;
+    }
+    .carrousel .grande {
+        width : calc(calc(100%)*var(--card-length))!important;
+    }
+
+}  
+

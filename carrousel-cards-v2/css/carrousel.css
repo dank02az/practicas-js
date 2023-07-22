@@ -1,16 +1,19 @@
 @import url(./root.css);
 
 .carrousel{
-    width: 90%;
+    width: 100%;
     max-width: 120em;
     overflow: hidden;
 
     position: relative;
     padding: 10px 0 10px 10px;
+
+    margin-inline: auto;
+    margin:5em auto
 }
 
 .carrousel .grande {
-    width: 202%;
+    width: 200%;
 
     display: flex;
     flex-flow: row nowrap;
@@ -47,6 +50,9 @@
 
     list-style-type: none;
     position: relative;
+
+    border-radius:100%;
+    box-shadow: 1px 1px 10px 6px #8080805e;
 }
 
 
@@ -85,3 +91,12 @@
 .punto:nth-child(2)::before {
     background-image: url(../img/arrow_rigth_angle.svg);
 }
+
+
+
+
+
+
+
+
+
